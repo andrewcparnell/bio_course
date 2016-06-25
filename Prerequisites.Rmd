@@ -1,0 +1,29 @@
+---
+title: "Prerequisites"
+author: "Andrew Parnell"
+output: pdf_document
+---
+
+In preparation for the course please install the following, preferably in the below suggested order.
+
+Remember you will need to bring your own personal computer for the duration of the course.
+
+### Step 1
+
+Install the following using the corresponding links
+
+-	R: [http://www.r-project.org](http://www.r-project.org)
+
+-	Rstudio: [https://www.rstudio.com](https://www.rstudio.com)
+
+### Step 2
+
+Now install the following packages by going into Rstudio and typing:
+```{r,eval=FALSE}
+install.packages('')
+```
+
+### Troubleshooting
+
+If you run into any problems please drop us a line at <andrew.parnell@ucd.ie>
+
