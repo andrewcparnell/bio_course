@@ -1,5 +1,5 @@
 ---
-title: "One day crash course on Biostatistics"
+title: "One day crash course for medics on Biostatistics with R"
 author: "Andrew C Parnell"
 date: "28 June 2016"
 output: pdf_document
@@ -127,7 +127,7 @@ Creating simple scatter plots
 
 ------
 
-# Practical 2: Running models and their diagnostics
+# Practical 2: Running models and diagnostics
 15:30-16:30
 
 Pick one of the script files (one for Prostate data - regression, one for South African data - classification) and run the files, answering the questions as you go.

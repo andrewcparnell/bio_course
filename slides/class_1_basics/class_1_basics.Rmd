@@ -1,0 +1,68 @@
+---
+title: 'Class 1: Basics and experimental design'
+author: "Andrew Parnell, School of Mathematics and Statistics, University College Dublin"
+output:
+  beamer_presentation:
+    includes:
+      in_header: header.tex
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, dev = 'pdf', fig.align='center', fig.width= 4, fig.height=3)
+```
+
+## Learning outcomes
+
+- Know how to create an interpret a two-sample t-test
+- Understand what a p-value means
+- Be able to perform a simple sample size calculation
+- Understand the basics of experimental design
+
+## Intro slide
+
+## Syllabus/timetable for the day
+
+## General goal: be able to create a statistical model of a biomarker panel and check that it is robust
+
+## Basics of data: continuous vs discrete, ordinal vs interval vs nominal
+
+## Two examples: prostate cancer (regression)
+
+## South African Heart Rate data (classification)
+
+## Testing differences between groups; the two-sample t-test
+
+## Sampling distributions of data
+
+## Null and alternative hypotheses
+
+## Drawing pictures
+
+## Getting and understanding the p-value
+
+## What the p-value is not
+
+## Introduction to sample size calculations
+
+## Type 1 and Type 2 error
+
+## Drawing pictures
+
+## The magic formula
+
+## Getting the values to put in to the formula
+
+## Possible extensions
+
+## Design of Experiments
+
+## The golden rule of designing an experiment
+
+## Blocking
+
+## Randomisation
+
+## Replication
+
+## More complicated experiments
