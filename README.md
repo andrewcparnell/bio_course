@@ -13,4 +13,4 @@ Research postgraduates, professionals, and practicing academics in medicine and 
 
 ## Start the course
 
-You can start browsing the course by visiting the [timetable](https://rawgit.com/andrewcparnell/biocourse_course/master/Timetable.html)
+You can start browsing the course by visiting the [timetable](https://rawgit.com/andrewcparnell/bio_course/master/Timetable.html)
