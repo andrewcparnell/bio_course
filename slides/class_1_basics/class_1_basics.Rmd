@@ -14,20 +14,44 @@ knitr::opts_chunk$set(echo = TRUE, dev = 'pdf', fig.align='center', fig.width= 4
 
 ## Learning outcomes
 
-- Know how to create an interpret a two-sample t-test
+- Know how to create and interpret a two-sample t-test
 - Understand what a p-value means
 - Be able to perform a simple sample size calculation
 - Understand the basics of experimental design
 
-## Intro slide
+General goal for the course: be able to create a statistical model for a medical test and check that it is robust
 
-## Syllabus/timetable for the day
+## Course details
 
-## General goal: be able to create a statistical model of a biomarker panel and check that it is robust
+- Lectures in the morning (9:30 - 1pm), practical in the afternoon (2pm - 4:30pm). More details in the [timetable](https://rawgit.com/andrewcparnell/bio_course/master/Timetable.html).
+- All course notes, code and data sets available on [Github page](https://github.com/andrewcparnell/bio_course)
+- All Slides available in pdf or RMarkdown (Rmd) fomat which can be opened in Rstudio
 
-## Basics of data: continuous vs discrete, ordinal vs interval vs nominal
+## Some basic concepts:
+
+- One way data can be separated is via _continuous_ (e.g. age, weight), or _discrete_ (disease state, Gleason grade, etc)
+- You can divide continuous into _interval_ (temperature) or _ratio_ (age, weight)
+- You can divide discrete into _ordinal_ (e.g. Gleason grade) or _nominal_ (disease state, eye colour)
+
+The type of statistical model we fit is almost entirely dependent on the type of data we have
 
 ## Two examples: prostate cancer (regression)
+
+Prostate cancer data set:
+
+- `lcavol`: log(cancer volume)
+- `lweight`: log(weight)
+- `age`: age
+- `lbph`: log(benign prostatic hyperplasia amount)
+- `svi`: seminal vesicle invasion
+- `lcp`: log(capsular penetration)
+- `gleason`: grade of cancer
+- `pgg45`: percentage Gleason scores 4 or 5
+- `lpsa`: outcome variable - log prostate specific antigen
+- `train`: whether the observation should be included in the training or test set
+
+__Task: predict `lpsa` based on other variables for the training set, and check performance on the test set__
+
 
 ## South African Heart Rate data (classification)
 
