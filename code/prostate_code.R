@@ -1,7 +1,7 @@
 # Code to run the Prostate cancer data set
 
 # Load in the data
-prostate = read.csv('prostate.csv')
+prostate = read.csv('https://raw.githubusercontent.com/andrewcparnell/bio_course/master/code/prostate.csv')
 
 # Look at the first few rows:
 head(prostate)

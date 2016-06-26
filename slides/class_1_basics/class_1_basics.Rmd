@@ -9,7 +9,8 @@ output:
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE, dev = 'pdf', fig.align='center', fig.width= 4, fig.height=3)
+knitr::opts_chunk$set(echo = TRUE, dev = 'pdf', fig.align='center', fig.width= 5, fig.height=3.5, global.par=TRUE)
+par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.01,las=1)
 ```
 
 ## Learning outcomes
@@ -52,12 +53,54 @@ Prostate cancer data set:
 
 __Task: predict `lpsa` based on other variables for the training set, and check performance on the test set__
 
+## Prostate example matrix scatter plot
 
-## South African Heart Rate data (classification)
+```{r, echo=FALSE}
+prostate = read.csv('https://raw.githubusercontent.com/andrewcparnell/bio_course/master/code/prostate.csv')
+pairs(prostate[,c(1:3,9)])
+```
+
+## Example 2: South African Heart Rate data (classification)
+
+
+462 observations, with 10 variables:
+
+- `sbp` - systolic blood pressure
+- `tobacco` -	cumulative tobacco (kg)
+- `ldl` -	low densiity lipoprotein cholesterol
+- `adiposity` - approx percentage body fat
+- `famhist` - family history of heart disease (Present, Absent)
+- `typea` -	type-A behavior
+- `obesity` - a measure of abesity
+- `alcohol` -	current alcohol consumption
+- `age` -	age at onset
+- `chd` -	output variable - coronary heart disease
+
+__Task: predict probaility of `chd` based on other variables__
+
+## Heart rate data plots
+
+```{r, echo=FALSE, fig.width = 4}
+par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.01,las=1)
+SA = read.table('https://raw.githubusercontent.com/andrewcparnell/bio_course/master/code/SAheartdata.txt', header=TRUE, sep = ',', row.names = 1)
+par(mfrow=c(2,2))
+boxplot(age ~ chd, data = SA, xlab = 'chd', ylab = 'age')
+boxplot(tobacco ~ chd, data = SA, xlab = 'chd', ylab = 'tobacco')
+boxplot(alcohol ~ chd, data = SA, xlab = 'chd', ylab = 'alcohol')
+boxplot(obesity ~ chd, data = SA, xlab = 'chd', ylab = 'obesity')
+par(mfrow=c(1,1))
+```
 
 ## Testing differences between groups; the two-sample t-test
 
+- Goal: test whether the mean of one group is equal to the mean of another group
+- Obviously we only have a sample of data, not all the potential data (this is generally impossible)
+- Use the mathematics of sampling distributions to determine whether the data look 'unlike' a situation where the two means are equal
+
 ## Sampling distributions of data
+
+- If we re-ran the experiment we would get different data. What might the sample means of these data sets look like?
+- Incredibly, 
 
 ## Null and alternative hypotheses
 
