@@ -34,7 +34,11 @@ summary(model_1)
 model_2 = lm(formula = lpsa ~ lweight + age, data = prostate)
 summary(model_2)
 
-# All of them
-model_3 = lm(formula = lpsa ~ ., data = prostate)
+# All of them - but get rid of training
+model_3 = lm(formula = lpsa ~ . - train, data = prostate)
 summary(model_3)
+
+# A model with interactions
+model_4 = lm(formula = lpsa ~ lweight + age + lweight:age, data = prostate)
+summary(model_4)
 

@@ -90,7 +90,7 @@ summary(model_1)
 
 ## Plotting the fit
 
-- One way is to type `plot(model_1)` but this perhaps gives too much info. Better:
+- One way is to type `plot(model_1)` which gives residual diagnostics. A quick plot of the fitted line:
 ```{r}
 par(mar=c(3,3,2,1), mgp=c(2,.7,0), tck=-.01,las=1)
 plot(prostate$lweight, prostate$lpsa, xlab = 'log(weight)', ylab= 'log(psa)')
@@ -107,12 +107,49 @@ summary(model_2)
 
 ## Expanding the fit even more
 
+```{r}
+model_3 = lm(formula = lpsa ~ . - train, data = prostate)
+summary(model_3)
+```
 
+## Multiple regression
+
+- When you have lots of explanatory variables this is known as _multiple regression_
+- You can still use the values in the `Estimate` column to create predictions of `lpsa` by multiplying and adding up
+- Beware the p-values as before: they might be highly dsignificant but still a very poor model
+- R gives you two other useful statistics: 
+    - The R-squared which measures the proportion of variation in the repsonse variable explained by the explanatory variables
+    - The residual standard error which measures how far away the data points are from the fitted line
+
+## Dealing with interactions
+
+- Interactions are important; our explanatory variables will often interact with each other to affect the response variable
+- The usual way to deal with interactions is to create _new explanatory variables_ by multiplying them together
+```{r}
+model_4 = lm(formula = lpsa ~ lweight + age + lweight:age, data = prostate)
+summary(model_4)
+```
 
 ## Regularisation and shrinkage
-## Lasso; Ridge and Elastic Net
-## Dealing with interactions
+
+- When you have lots and lots of explanatory variables, the model can become very slow or might not fit at all
+- Worse, we might have lots of spurious p-values
+- It makes sense to remove or reduce some of the coefficients on the explanatory variables if we think their effect is over-stated
+- One way of doing this is via _regularisation_, where we set some of the values to zero, another is via _shrinkage_ where we reduce the values (shrink them towards zero)
+
+## Lasso and Ridge
+
+- The R package `glmnet` will perform shrinkage and regularisation
+- The _Lasso_ model imposes a restricted sum on all of the coefficient values
+- The _Ridge_ model imposes an extra assumption that all of the coefficient values come from a normal distribution
+- We will play with some of these models later
+
 ## Even more advanced regression approaches
+
+- There is lots of research on regression models of all different types
+- The vast majority of them involve creating a set of coefficients to multiply the explanatory variables by and then adding everything up
+- It's very important to check the model diagnostics
+
 ## Intro to classification models
 ## The logit transformation
 ## Example: SA Heart rate
