@@ -25,6 +25,6 @@ Time  | Class
 9:15-10:00 | [Regression and classification](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_2_reg_class/class_2_reg_class.pdf)
 10:00-10:45 | [Introduction to Rstudio](https://rawgit.com/andrewcparnell/bio_course/master/slides/practical_1/practical_1_intro.pdf)
 10:45-11:00 | Discussion and coffee 
-11:00-11:45 | [Model checking and performance](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_3_checks/class_3_checks.pdf)
+11:00-11:45 | [Model checking and performance](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_3_reg_checks/class_3_checks.pdf)
 11:45-13:00 | [Running models and diagnostics](https://rawgit.com/andrewcparnell/bio_course/master/slides/practical_2/practical_2_models.pdf)
 
