@@ -214,7 +214,7 @@ $$Prob(CHD) = 0.06 \times age - 2$$
 - But if someone has an age of 20 they have probability -0.8. Oh dear!
 - Instead use a transformation, such as the _logit_
 $$Prob(CHD) = \frac{\exp(0.06 \times age - 2)}{1 + \exp(0.06 \times age - 2)}$$
-- This transformation _garuantees_ the values will be between 0 and 1 - try it!
+- This transformation _guarantee_ the values will be between 0 and 1 - try it!
 
 ## About classification models
 
