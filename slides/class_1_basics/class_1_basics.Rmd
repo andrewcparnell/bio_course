@@ -28,9 +28,9 @@ General goal for the course: be able to create a statistical model for a medical
 
 ## Course details
 
-- More lectures in the morning (9:30 - 1pm), more practicals in the afternoon (2pm - 5pm). More details in the [__timetable__](https://rawgit.com/andrewcparnell/bio_course/master/Timetable.html).
+- Mixture of lectures and practicals. More details in the [__timetable__](https://rawgit.com/andrewcparnell/bio_course/master/Timetable.html).
 - All course notes, code and data sets available on [__Github page__](https://github.com/andrewcparnell/bio_course)
-- All Slides available in pdf or RMarkdown (Rmd) format which can be opened in Rstudio
+- All slides available in pdf or RMarkdown (Rmd) format which can be opened in Rstudio
 
 ## Some basic concepts:
 

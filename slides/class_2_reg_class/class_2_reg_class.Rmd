@@ -262,7 +262,8 @@ AIC: 529.56
 
 We can extend to multiple explanatory variables in exactly the same way as before:
 ```{r, results = 'hide'}
-model_2 = glm(chd ~ age + adiposity + age:adiposity, data = SA, family = 'binomial')
+model_2 = glm(chd ~ age + adiposity + age:adiposity, 
+              data = SA, family = 'binomial')
 summary(model_2)
 ```
 ```
