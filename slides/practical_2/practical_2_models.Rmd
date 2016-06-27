@@ -1,0 +1,34 @@
+---
+title: "Running models and diagnostics"
+author: "Andrew Parnell"
+date: "28 June 2016"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Introduction
+
+Welcome to Practical 2: running models and diagnostics. In this practical we will:
+
+- Work through some ready-to-run R scripts
+- Learn how to run regression and classification models
+- Learn how to run diagnostics and check fit
+
+## Instructions
+
+This document is much shorter than the previous practical. To run this practical properly you need to install the following two packages:
+```{r, eval=FALSE}
+install.packages('pROC')
+install.packages('ROCR')
+```
+
+The things to do are:
+
+1. Copy or download the two code files for the [prostate](https://raw.githubusercontent.com/andrewcparnell/bio_course/master/code/prostate_code.R) example and the [heart disease](https://raw.githubusercontent.com/andrewcparnell/bio_course/master/code/SA_code.R) example into new R scripts
+2. Start with the prostate code and work through the script, then move on to the heart disease code.
+3. Try to understand what each line of code is doing (use the help commands to look up functions you don't understand)
+4. At various places in the code are questions or other tasks you can complete if you want to
+5. If you get stuck please raise your hand and I will try to help

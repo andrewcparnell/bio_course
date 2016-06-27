@@ -294,7 +294,7 @@ points(SA$age, model_1$fitted.values, col='red')
 - The R package `glmnet` will perform shrinkage and regularisation for both regression and classification
 - The _Lasso_ model imposes a restricted sum on the absolute value of all of the coefficient values
 - The _Ridge_ model imposes an assumption that all of the coefficient values come from a normal distribution with some small standard deviation
-- We will play with some of these models later
+- Fitting these types of model is beyond the scope of this course
 
 ## More advanced classification approaches
 

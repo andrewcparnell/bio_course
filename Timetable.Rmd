@@ -1,20 +1,30 @@
 ---
-title: "One day crash course for medics on Biostatistics with R"
-author: "Andrew Parnell"
+title: "Two day course for medics on Biostatistics with R and Matlab"
+author: "Andrew Parnell and Eugene Kashdan"
 date: "June 2016"
 output: html_document
 ---
 
 Module pre-requisites can be found [here](https://rawgit.com/andrewcparnell/bio_course/master/Prerequisites.html). All the raw files and code can be found [here](https://github.com/andrewcparnell/bio_course). Click 'Download ZIP' near the top right if you want offline versions of everything. 
 
+## Day 1
+
 Time  | Class
 ------------- | ----------------------------------------------------
-9:30-10:30 | Basics: t-tests, sample sizes, and experimental design [Class 1](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_1_basics/class_1_basics.pdf)
-10:30-10:45 | Discussion and coffee 
-10:45-11:45 | Introduction to Rstudio [Practical 1](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_1_intro/prac_1_intro.pdf)
-11:45-12:00 | Discussion and break 
-12:00-13:00 | Regression and classification [Class 2](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_2_reg_class/class_2_reg_class.pdf)
-13:00-14:00 | Lunch
-14:00-15:00 |Model checking and performance [Class 3](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_3_checks/class_3_checks.pdf)
-15:00-17:00 | Running models and diagnostics [Practical 2](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_2_models/prac_2_models.pdf)
+9:00-11:00 | [Introduction to Matlab](https://rawgit.com/andrewcparnell/bio_course/master/Eugene/introtomatlab.pptx)
+11:00-11:30 | Discussion and coffee 
+11:30-13:00 | [Matlab worksheet](https://rawgit.com/andrewcparnell/bio_course/master/Eugene/worksheet.pdf)
+
+## Day 2
+
+Some pre-requisites slides (Class 1 on t-tests, sample sizes, and experimental design 
+) can be found [here](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_1_basics/class_1_basics.pdf). 
+
+Time  | Class
+------------- | ----------------------------------------------------
+9:15-10:00 | Regression and classification [Class 2](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_2_reg_class/class_2_reg_class.pdf)
+10:00-10:45 | Introduction to Rstudio [Practical 1](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_1_intro/prac_1_intro.pdf)
+10:45-11:00 | Discussion and coffee 
+11:00-11:45 | Model checking and performance [Class 3](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_3_checks/class_3_checks.pdf)
+11:45-13:00 | Running models and diagnostics [Practical 2](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_2_models/prac_2_models.pdf)
 

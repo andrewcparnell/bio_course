@@ -20,7 +20,8 @@ Install the following using the corresponding links
 
 Now install the following packages by going into Rstudio and typing:
 ```{r,eval=FALSE}
-install.packages('')
+install.packages('pROC')
+install.packages('ROCR')
 ```
 
 ### Troubleshooting
