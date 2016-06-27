@@ -22,9 +22,9 @@ Some pre-requisites slides (Class 1 on t-tests, sample sizes, and experimental d
 
 Time  | Class
 ------------- | ----------------------------------------------------
-9:15-10:00 | Regression and classification [Class 2](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_2_reg_class/class_2_reg_class.pdf)
-10:00-10:45 | Introduction to Rstudio [Practical 1](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_1_intro/prac_1_intro.pdf)
+9:15-10:00 | [Regression and classification](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_2_reg_class/class_2_reg_class.pdf)
+10:00-10:45 | [Introduction to Rstudio](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_1_intro/prac_1_intro.pdf)
 10:45-11:00 | Discussion and coffee 
-11:00-11:45 | Model checking and performance [Class 3](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_3_checks/class_3_checks.pdf)
-11:45-13:00 | Running models and diagnostics [Practical 2](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_2_models/prac_2_models.pdf)
+11:00-11:45 | [Model checking and performance](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_3_checks/class_3_checks.pdf)
+11:45-13:00 | [Running models and diagnostics](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_2_models/prac_2_models.pdf)
 
