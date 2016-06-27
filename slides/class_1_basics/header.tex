@@ -1,7 +1,23 @@
-\usepackage{fancyhdr, graphicx}
-\renewcommand{\headrulewidth}{0pt}
-\fancyhead[L]{}
-\fancyhead[R]{
-  \includegraphics[width=4cm]{../UCDlogo.pdf}
-}
-\pagestyle{plain}
+\setbeamertemplate{footline}[text line]{
+  \parbox{\linewidth}{\hfill \insertframenumber/\inserttotalframenumber}
+ }
+
+
+%\usepackage{fancyhdr, graphicx}
+%\pagestyle{fancy}
+%\setbeamerfont{footline}{size=1000pt}
+%\fontsize{10}{12}\selectfont}
+%\renewcommand{\headrulewidth}{0pt} % to remove line on header
+%\renewcommand{\footruleskip}{-30pt}
+%\lfoot{Copyright \textcopyright 2016 Andrew Parnell}
+
+%\usepackage[textheight=8in,footskip=72pt]{geometry}
+%\renewcommand{\footrulewidth}{1pt} % to remove line on footer
+
+%\fancyhf{}
+%\fancyfoot[R]{\raisebox{-10pt}[0pt][0pt]{\includegraphics[scale=0.10]{../UCDlogo.pdf}}}
+
+
+%\fancyhead[CO,CE]{This is fancy header}
+%\fancyfoot[CO,CE]{And this is a fancy footer}
+%\fancyfoot[LE,RO]{\thepage}

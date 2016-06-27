@@ -26,7 +26,7 @@ General goal for the course: be able to create a statistical model for a medical
 
 - Lectures in the morning (9:30 - 1pm), practical in the afternoon (2pm - 4:30pm). More details in the [timetable](https://rawgit.com/andrewcparnell/bio_course/master/Timetable.html).
 - All course notes, code and data sets available on [Github page](https://github.com/andrewcparnell/bio_course)
-- All Slides available in pdf or RMarkdown (Rmd) fomat which can be opened in Rstudio
+- All Slides available in pdf or RMarkdown (Rmd) format which can be opened in Rstudio
 
 ## Some basic concepts:
 
@@ -67,11 +67,11 @@ pairs(prostate[,c(1:3,9)])
 
 - `sbp` - systolic blood pressure
 - `tobacco` -	cumulative tobacco (kg)
-- `ldl` -	low densiity lipoprotein cholesterol
+- `ldl` -	low density lipoprotein cholesterol
 - `adiposity` - approx percentage body fat
 - `famhist` - family history of heart disease (Present, Absent)
 - `typea` -	type-A behavior
-- `obesity` - a measure of abesity
+- `obesity` - a measure of obesity
 - `alcohol` -	current alcohol consumption
 - `age` -	age at onset
 - `chd` -	output variable - coronary heart disease
@@ -100,36 +100,157 @@ par(mfrow=c(1,1))
 ## Sampling distributions of data
 
 - If we re-ran the experiment we would get different data. What might the sample means of these data sets look like?
-- Incredibly, 
+- Amazingly, no matter what the shape of the original data, the sample mean will always follow a _normal distribution_ 
+- The mean of this normal distribution will be the mean of the population, and the standard deviation (known as the _standard error_) will be the same as the population standard deviation divided by the square root of the sample size
+
+## Sampling distributions in pictures
+
+```{r}
+population = runif(1000) # 1000 uniform(0,1) numbers
+sample_size = 30 # A sample size
+sample_mean = rep(NA, 10000) # Create 10k samples
+for(i in 1:10000) { 
+  current_sample = sample(population, sample_size)
+  sample_mean[i] = mean(current_sample)
+}
+```
+```{r, echo = FALSE, fig.height = 3}
+hist(population, main = '', xlab = '')
+lines(density(sample_mean)$x, 10*density(sample_mean)$y, col='red')
+```
+
+## Sampling distribuitons in theory and in practice
+
+- It's nice to know that in theory if we took thousands of samples we would end up with a normally distributed sample mean
+- However, we usually only take 1 sample, so we don't know what the mean and the standard deviation really are
+- The usual shortcut is to use the sample mean (i.e. the mean of the current sample) and the sample standard error (i.e. the standard deviation of the sample divided by the sample size)
 
 ## Null and alternative hypotheses
 
+- The usual way to run a two-sample t-test is to define a _null hypothesis_ that says both population means are equal, and an _alternative hypothesis_ that states that they are not
+- We then create a sampling distribution of the difference between the two samples
+- If the two sample means are sufficiently different after taking account of their standard errors then we usually reject the null hypothesis
+
+## Example: the heart rate data
+
+Suppose we wished to test whether tobacco consumption had an effect on coronary heart disease:
+```{r}
+with(SA, t.test(tobacco[chd==0], tobacco[chd==1]))
+```
+
 ## Drawing pictures
+
+```{r, echo = FALSE}
+group1 = subset(SA$tobacco, SA$chd==0)
+group2 = subset(SA$tobacco, SA$chd==1)
+curve(dnorm(x, mean=mean(group1),
+             sd=sd(group1)/sqrt(length(group1))), from = 1, to = 7,
+      ylab = '', xlab = 'Tobacco consumption')
+curve(dnorm(x, mean=mean(group2),
+             sd=sd(group2)/sqrt(length(group2))), add = TRUE, col='red')
+legend('topright', legend = c('No CHD','CHD'), lty=1, col=c('black','red'))
+```
 
 ## Getting and understanding the p-value
 
-## What the p-value is not
+- Most people look for the p-value. A small p-value (often, for no reason, smaller than 0.05) is considered to be a 'statistically significant result'
+- The meaning of the word significant here is that of _signifying something_, not that it is necessarily important
+- It is often far more helpful to look at the _confidence interval_ which is a measure of effect size, than the p-value 
+
+## Warnings about p-values
+
+- p-values are almost universally mis-used in science (and medicine in particular)
+- A small p-value just means that you have quantified an effect well, and is usually just a function of the sample size
+- The null hypothesis is almost never true, so it's easy to manipulate your experiment to get small p-values
+- From the [American Statistical Association statement](https://www.amstat.org/newsroom/pressreleases/P-ValueStatement.pdf) on p-values:
+\begin{quote}
+By itself, a p-value does not provide a good measure of evidence regarding a model or hypothesis.
+\end{quote}
+
+# Sample size calculations
 
 ## Introduction to sample size calculations
 
+* The t-test (and the formula behind it) is often more useful for deriving a sample size for an experiment to quantify a given effect
+* A commonly used formula is:
+$$N > \frac{ 2 \sigma^2 (z_{\alpha/2} + z_\beta)^2 }{ d^2 }$$
+* where:
+
+    + $\sigma$ is the unknown population standard deviation
+    + $d$ is the _clinically significant_ difference
+    + $z_{\alpha/2}$ and $z_\beta$ are the cut-off values for a given _type 1_ and _type 2_ error
+
 ## Type 1 and Type 2 error
 
-## Drawing pictures
-
-## The magic formula
+![Type 1 and Type 2 error](type1_2_error.pdf)
 
 ## Getting the values to put in to the formula
 
-## Possible extensions
+- You can usually find a good value of $\sigma$ from a previous experiment
+- $d$ should be easy to choose if you are familiar with the research
+- $z_{\alpha/2}$ and $z_\beta$ are harder to choose. Many people set $\alpha = 0.05$ and $\beta = 0.2$ which gives $z_{\alpha/2} = 1.96$ and $z_\beta = 0.842$
 
-## Design of Experiments
+Once you have all these values you can plug them into the formula
+
+## Example
+
+- Let's suppose we wanted to conduct a new version of the test of tobacco levels on coronary heart disease. We might guess the population standard deviation to be:
+```{r}
+sd(SA$tobacco)
+```
+- Suppose a difference of 2 is considered to be clinically significant, then:
+```{r}
+N = (2 * sd(SA$tobacco)^2 * (1.96 + 0.842)^2 ) / ( 2^2 )
+N
+```
+So we need at least `r ceiling(N)` samples in each group
+
+## Final notes about sample size calculations
+
+- Many people just plug in values to the above formula until they get a number they are happy with. This will often lead to a useless experiment!
+- Be especially careful choosing the value of $\sigma$ - the population standard deviation. Previous experiments are likely to have under-estimated it
+- Be even more careful when performing comparisons between multiple groups, the error terms ($z_{\alpha/2}$ and $z_\beta$) may need to be reduced
+- There are many more complicated and interesting versions of sample size formulae
+
+# Design of Experiments
+
+## Introduction
+
+- In statistics, most experiments are not designed, and we have to pick apart the effects of different variables according to the data we are presented with. 
+- A problem we often face is that of _confounding_ where multiple factors have changed our outcome variable and we cannot pick apart which is the cause of the change
+- For example, in the CHD data most of those with CHD have adiposity scores, and consume more tobacco. If adiposity was really the key factor we have no way of separating it out from tobacco consumption
+- If it were ethical to design an experiment here we could, for example, force there to be some non-smokers with high adiposity in the CHD and no-CHD groups
 
 ## The golden rule of designing an experiment
 
+\begin{quote}
+Block everything you can control, randomise over everything else, and replicate as much as possible
+\end{quote}
+
+
+
 ## Blocking
+
+- A _block_ is simply a variable in an experiment you have control over, e.g. temperature, sex, age, etc. 
+- The idea is that in each block the people in the sample are broadly similar across the treatment groups
+- When there are multiple factors we might have a more complex design, such as a Latin square or similar
 
 ## Randomisation
 
+- When we can't control a variable, or we have so many variables that we can't control them all, we rely on _randomisation_, i.e. randomly allocating people to treatment groups
+- _Randomisation_ helps by reducing the effect of confounding
+- A related concept is that of _blinding_ where the subjects/experimenters do not know which group
+
 ## Replication
 
-## More complicated experiments
+- It's all very well designing a beautiful experiment, but if you only end up with 5 observations at the end it will be hard to produce meaningful results
+- The more replicates you have the more change of identifying the effect size
+- There are lots of different ways to replicate, including taking multiple observations on people (repeated measures) or taking them over time (longitudinal analysis)
+- For more complicated experiments, simple t-tests will not work well, but regression and classification models still do!
+
+## Summary
+
+- Two sample t-tests not ideal for most proper data sets
+- Beware of mis-interpretations of p-values
+- Sample size calculations are a good idea
+- Always design an experiment if possible
