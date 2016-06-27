@@ -9,7 +9,7 @@ output: pdf_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# Class 1: Basics and experimental design
+# Class 1: Basics: t-tests, sample sizes, and experimental design
 9:30-10:30
 
 Learning outcomes:

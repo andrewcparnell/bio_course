@@ -25,3 +25,12 @@ boxplot(tobacco ~ chd, data = SA, xlab = 'chd', ylab = 'tobacco')
 boxplot(alcohol ~ chd, data = SA, xlab = 'chd', ylab = 'alcohol')
 boxplot(obesity ~ chd, data = SA, xlab = 'chd', ylab = 'obesity')
 par(mfrow=c(1,1))
+
+# Fit a model of chd vs age
+model_1 = glm(chd ~ age, data = SA, family = 'binomial')
+summary(model_1)
+
+# Add an extra explanatory variable and an interaction
+model_2 = glm(chd ~ age + adiposity + age:adiposity, data = SA, family = 'binomial')
+summary(model_2)
+

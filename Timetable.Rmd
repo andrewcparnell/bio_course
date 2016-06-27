@@ -9,7 +9,7 @@ Module pre-requisites can be found [here](https://rawgit.com/andrewcparnell/bio_
 
 Time  | Class
 ------------- | ----------------------------------------------------
-9:30-10:30 | Basics and experimental design [Class 1](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_1_basics/class_1_basics.pdf)
+9:30-10:30 | Basics: t-tests, sample sizes, and experimental design [Class 1](https://rawgit.com/andrewcparnell/bio_course/master/slides/class_1_basics/class_1_basics.pdf)
 10:30-10:45 | Discussion and coffee 
 10:45-11:45 | Introduction to Rstudio [Practical 1](https://rawgit.com/andrewcparnell/bio_course/master/practicals/prac_1_intro/prac_1_intro.pdf)
 11:45-12:00 | Discussion and break 
